@@ -12,5 +12,4 @@
 - Interface
 - Difficulté accrue au fur et à mesure 
 - Amélioration tours de défense
-- Mettre un vrai modèle de player
-- Améliorer le terrain (bloquer les côtés + ajout porte à l'entrée du village)
+- Faire en sorte de voir le player + animations qd mouvements
