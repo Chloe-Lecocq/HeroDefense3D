@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour
     protected WheelMenuMB WheelMenuInstance;
     [HideInInspector]
     public ControllerMode Mode;
+    public float CameraDistance;
 
     // Use this for initialization
     void Start()
@@ -19,6 +20,10 @@ public class Controller : MonoBehaviour
     void Update()
     {
         if (Mode == ControllerMode.Play)
+        {
+            CameraDistance = Mathf.Clamp(CameraDistance + Input.mouseScrollDelta.y, 0, 10);
+        }
+            if (Mode == ControllerMode.Play)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -40,11 +45,9 @@ public class Controller : MonoBehaviour
 
     private void MenuClick(string path)
     {
-        Debug.Log(path);
         var paths = path.Split('/');
         SetMode(ControllerMode.Play);
-
-        //GetComponent<PlaceTower>().SetPrefab(int.Parse(paths[1]), int.Parse(paths[2]));
+        GetComponent<PlaceTower>().SetPrefab(int.Parse(paths[1]));
     }
 
     public void SetMode(ControllerMode mode)

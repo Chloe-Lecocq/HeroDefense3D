@@ -32,4 +32,9 @@ public class FirstPersonLook : MonoBehaviour
         transform.localRotation = Quaternion.AngleAxis(-currentMouseLook.y, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(currentMouseLook.x, Vector3.up);
     }
+
+    public Vector2 getCurrentMouseLook()
+    {
+        return currentMouseLook;
+    }
 }

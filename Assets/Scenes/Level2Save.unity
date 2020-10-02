@@ -7438,6 +7438,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WheelMenuPrefab: {fileID: -4157630548519562907, guid: 1015baf6c3eb58742b6f97be3458fdec, type: 3}
   Mode: 0
+  CameraDistance: 0
+--- !u!114 &683915369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683915363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f45a4fc7f5154d44849d59d49192828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerLib:
+  - {fileID: 6552644840746853135, guid: 92dfe98d3f8fe574495888ef637367dd, type: 3}
+  TransparentMat: {fileID: 2100000, guid: 2235f2c4c9382384dba9346a8c01ea03, type: 2}
+  camera: {fileID: 522811754}
 --- !u!1 &684758883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1740273473050372, guid: 63ce2b31e16acab4d8a41f884c36333c, type: 3}
@@ -15141,7 +15158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4773208539257838, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.069
+      value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 136877096903737240, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_Radius
@@ -15153,6 +15170,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114762042097486276, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+    - {fileID: 81448068208000304, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+    - {fileID: 114103969153859672, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
 --- !u!1001 &1432348629
 PrefabInstance:
