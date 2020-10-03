@@ -15,7 +15,7 @@ public class Crouch : MonoBehaviour
     [SerializeField]
     GroundCheck groundCheck;
 
-    public KeyCode[] keys = new KeyCode[] { KeyCode.LeftControl, KeyCode.RightControl };
+    public KeyCode[] keys = new KeyCode[] { KeyCode.LeftShift, KeyCode.RightShift };
     public bool IsCrouched { get; private set; }
     public event System.Action CrouchStart, CrouchEnd;
 
