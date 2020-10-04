@@ -19,7 +19,7 @@ public class EntryGate : MonoBehaviour
     public void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Enemy") {
-            Debug.Log("Ouch ! He arrived");
+            //Debug.Log("Ouch ! He arrived");
         }
     }
 }

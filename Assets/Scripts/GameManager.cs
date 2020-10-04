@@ -1,15 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public Transform positionSpawn;
     public int nbEnnemyAtStart = 5;
     public int spawningSize = 10;
     public GameObject ennemyPrefab;
     public float spawnPeriod = 0.1f;
-    
+    public Text scoreText;
+    private int score = 0;
+
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,4 +47,11 @@ public class GameManager : MonoBehaviour
             Quaternion.Euler(new Vector3 (0f, directionFacing, 0f)), positionSpawn);
         yield return new WaitForSeconds(spawnPeriod);
     }
+
+    public void UpScore()
+    {
+        score++;
+        scoreText.text = "Score : " + score.ToString();
+    }
+
 }
