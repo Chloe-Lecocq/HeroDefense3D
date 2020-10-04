@@ -31,17 +31,32 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject e in listEnnemies)
         {
-            Ennemy ennemy = e.GetComponent<Ennemy>();
-            Debug.Log(ennemy.gameObject +" n°"+ listEnnemies.IndexOf(e) +" : "+ennemy.currentWayPoint);
-            if(ennemy.hasReached && ennemy.currentWayPoint < 3) {
-                if (ennemy.currentWayPoint == 2) {
-                    ennemy.currentWayPoint = 3; // ennemy goes from 2 point to last point
-                } else {
-                    ennemy.currentWayPoint++;
+            if (e != null) {
+                Ennemy ennemy = e.GetComponent<Ennemy>();
+                //Debug.Log(ennemy.gameObject +" n°"+ listEnnemies.IndexOf(e) +" : "+ennemy.currentWayPoint);
+                if(ennemy.hasReachedCheckpoint) {
+                    switch (ennemy.currentWayPoint)
+                    {
+                        case 0 :
+                            ennemy.currentWayPoint = Random.Range(1, 3);
+                            break;
+                        case 1 :
+                            ennemy.currentWayPoint = 3; // ennemy goes from point 1 to last point
+                            break;
+                        case 2 :
+                            ennemy.currentWayPoint = 3; // ennemy goes from point 2 to last point
+                            break;
+                        default:
+                            ennemy.currentWayPoint = 4;
+                            break;
+                    }
+                    if (ennemy.currentWayPoint != 4) {
+                        ennemy.targetWayPoint = ennemy.keypointsPath[0].GetChild(ennemy.currentWayPoint);
+                        ennemy.hasReachedCheckpoint = false;
+                    }
                 }
-                ennemy.targetWayPoint = ennemy.keypointsPath[0].GetChild(ennemy.currentWayPoint);
-                ennemy.hasReached = false;
             }
+            
         }
     }
 

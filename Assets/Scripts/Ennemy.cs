@@ -6,44 +6,38 @@ public class Ennemy : MonoBehaviour
 {
     public float speed = 0.1f;
     private bool _isSpawningEnnemies = true;
-    public int force = 5;
-    public bool entryReached = false;
-    public Transform entryGate;
+    public int force = 5, currentWayPoint = 0;
+    public bool entryReached, hasReachedCheckpoint = false;
     public Transform[] keypointsPath;
-    public int currentWayPoint = 0;
-    public bool hasReached = false;
-    public Transform targetWayPoint;
-    public Transform buildings;
+    public Transform targetWayPoint, buildings, entryGate;
     
     // Start is called before the first frame update
     void Start()
     {
-        // transform.LookAt(Camera.main.transform);
-        //transform.LookAt(entryGate.transform);
-        // transform.position = Vector3.Lerp(this.transform.position, 
-        //                                 new Vector3(entryGate.position.x, entryGate.position.y, entryGate.position.z), 
-        //                                 0.2f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_isSpawningEnnemies && !entryReached) {
-            transform.LookAt(entryGate.transform);
-            transform.Translate(transform.forward * speed, Space.World);
-        } else if (_isSpawningEnnemies && entryReached) {
-            ///transform.LookAt(buildings.GetChild(0).transform);
-            //transform.Translate(transform.forward * speed, Space.World);
-            if(targetWayPoint == null) {targetWayPoint = keypointsPath[0].GetChild(currentWayPoint);}
-            walk();
+        if (_isSpawningEnnemies ) {
+            if (!entryReached) {
+                walkTo(entryGate);
+            } else {
+                if (currentWayPoint < 4) {
+                    if(targetWayPoint == null)
+                        targetWayPoint = keypointsPath[0].GetChild(currentWayPoint);
+                    walkTo(targetWayPoint);
+                } else {
+                    walkTo(buildings.GetChild(0));
+                }
+            }
         }
     }
 
-    public void walk(){
-        transform.LookAt(targetWayPoint.transform);
+    public void walkTo(Transform goal){
+        transform.LookAt(goal.transform);
         transform.Translate(transform.forward * speed, Space.World);
-        //transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.position - transform.position, speed*Time.deltaTime, 0.0f);
-        //transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position,   speed*Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider c)
@@ -59,7 +53,7 @@ public class Ennemy : MonoBehaviour
                 entryReached = true;
                 break;
             case "Checkpoint":
-                hasReached = true;
+                hasReachedCheckpoint = true;
                 break;
             case "Finish":
                 Debug.Log("Touched the house ! Mouhaha !!");
@@ -68,8 +62,6 @@ public class Ennemy : MonoBehaviour
             default:
                 break;
         }
-        
-
     }
    
 }

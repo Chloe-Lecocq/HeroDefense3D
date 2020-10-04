@@ -442,7 +442,6 @@ GameObject:
   - component: {fileID: 442318715029181753}
   - component: {fileID: -3018312765495624484}
   - component: {fileID: 9205620757580978690}
-  - component: {fileID: 1009650631901732630}
   - component: {fileID: 8314966342237072038}
   m_Layer: 0
   m_Name: Male B
@@ -556,20 +555,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!136 &1009650631901732630
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554081579786429635}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.23233481
-  m_Height: 1.8106319
-  m_Direction: 1
-  m_Center: {x: 0.002890953, y: 0.8892942, z: -0.009637802}
 --- !u!114 &8314966342237072038
 MonoBehaviour:
   m_ObjectHideFlags: 0
