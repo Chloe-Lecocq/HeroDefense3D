@@ -7,17 +7,17 @@ public class Ennemy : MonoBehaviour
     public float speed = 0.1f;
     private bool _isSpawningEnnemies = true;
     public int force = 5;
-    private bool entryReached = false;
+    public bool entryReached = false;
     public Transform entryGate;
     public Transform[] keypointsPath;
-    private int currentWayPoint = 0;
-    private Transform targetWayPoint;
+    public int currentWayPoint = 0;
+    public bool hasReached = false;
+    public Transform targetWayPoint;
     public Transform buildings;
     
     // Start is called before the first frame update
     void Start()
     {
-        //Destroy(gameObject, 50f);
         // transform.LookAt(Camera.main.transform);
         //transform.LookAt(entryGate.transform);
         // transform.position = Vector3.Lerp(this.transform.position, 
@@ -34,31 +34,17 @@ public class Ennemy : MonoBehaviour
         } else if (_isSpawningEnnemies && entryReached) {
             ///transform.LookAt(buildings.GetChild(0).transform);
             //transform.Translate(transform.forward * speed, Space.World);
-
-            if(currentWayPoint < this.keypointsPath.Length)
-            {
-                if(targetWayPoint == null)
-                    targetWayPoint = keypointsPath[0].GetChild(currentWayPoint);
-                walk();
-            }
+            if(targetWayPoint == null) {targetWayPoint = keypointsPath[0].GetChild(currentWayPoint);}
+            walk();
         }
     }
 
-    void walk(){
-        // rotate towards the target
+    public void walk(){
         transform.LookAt(targetWayPoint.transform);
         transform.Translate(transform.forward * speed, Space.World);
         //transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.position - transform.position, speed*Time.deltaTime, 0.0f);
- 
-        // move towards the target
         //transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position,   speed*Time.deltaTime);
-
-        if(transform.position == targetWayPoint.position)
-        {
-            currentWayPoint++;
-            targetWayPoint = keypointsPath[0].GetChild(currentWayPoint);
-        }
-     } 
+    }
 
     void OnTriggerEnter(Collider c)
     {
@@ -72,11 +58,13 @@ public class Ennemy : MonoBehaviour
                 Debug.Log("Yeah ! First point");
                 entryReached = true;
                 break;
+            case "Checkpoint":
+                hasReached = true;
+                break;
             case "Finish":
                 Debug.Log("Touched the house ! Mouhaha !!");
                 Destroy(this.gameObject);
                 break;
-
             default:
                 break;
         }

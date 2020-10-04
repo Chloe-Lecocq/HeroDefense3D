@@ -582,11 +582,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02143a82ac19694f8bf3a7aecb3d171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  speed: 0.025
   force: 5
+  entryReached: 0
   entryGate: {fileID: 7681929477325964748, guid: 68169b9e7a001f94583f3fd49c04ddd8, type: 3}
   keypointsPath:
   - {fileID: 7424690048002109158, guid: 00f7948af133e45499721fe7d279d557, type: 3}
+  currentWayPoint: 0
+  hasReached: 0
+  targetWayPoint: {fileID: 0}
   buildings: {fileID: 4491571738391100636, guid: eea3a0cdd31c68b4d9bbbd7dfcc3d13d, type: 3}
 --- !u!1 &554096283802624833
 GameObject:
