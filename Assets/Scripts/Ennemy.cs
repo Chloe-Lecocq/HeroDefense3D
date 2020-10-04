@@ -7,7 +7,8 @@ public class Ennemy : MonoBehaviour
     public float speed = 0.1f;
     private bool _isSpawningEnnemies = true;
     public int force = 5, currentWayPoint = 0;
-    public bool entryReached, hasReachedCheckpoint = false;
+    public bool entryReached = false; 
+    public bool hasReachedCheckpoint = false;
     public Transform[] keypointsPath;
     public Transform targetWayPoint, buildings, entryGate;
     protected Animator animator;
@@ -56,7 +57,6 @@ public class Ennemy : MonoBehaviour
                 hasReachedCheckpoint = true;
                 break;
             case "Finish":
-                Destroy(this.gameObject);
                 break;
             default:
                 break;

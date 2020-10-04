@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
         {
             if (e != null) {
                 Ennemy ennemy = e.GetComponent<Ennemy>();
-                //Debug.Log(ennemy.gameObject +" n°"+ listEnnemies.IndexOf(e) +" : "+ennemy.currentWayPoint);
                 if(ennemy.hasReachedCheckpoint) {
                     switch (ennemy.currentWayPoint)
                     {

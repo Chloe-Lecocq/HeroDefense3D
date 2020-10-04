@@ -572,7 +572,7 @@ MonoBehaviour:
   force: 5
   currentWayPoint: 0
   entryReached: 0
-  hasReachedCheckpoint: 1
+  hasReachedCheckpoint: 0
   keypointsPath:
   - {fileID: 7424690048002109158, guid: 00f7948af133e45499721fe7d279d557, type: 3}
   targetWayPoint: {fileID: 0}
