@@ -7,6 +7,10 @@ TagManager:
   - Floor
   - Enemy
   - DeadEnemy
+  - EntryGate
+  - Ground
+  - EntryFilter
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
