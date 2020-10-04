@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
     private Animator animator;
 
-    void Start()
+        void Start()
     {
         animator = GetComponent<Animator>();
         health = startHealth;
@@ -18,7 +19,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        Debug.Log(health);
         if (health <= 0 && !isDead)
         {
             Die();
@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         isDead = true;
+        GameManager.instance.UpScore();
         animator.SetTrigger("Die");
         gameObject.tag = "DeadEnemy";
         Destroy(gameObject, 1.5f);
