@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02143a82ac19694f8bf3a7aecb3d171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
+  speed: 0.005
   force: 5
   entryGate: {fileID: 7681929477325964748, guid: 68169b9e7a001f94583f3fd49c04ddd8, type: 3}
   keypointsPath:

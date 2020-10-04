@@ -69,15 +69,12 @@ public class Ennemy : MonoBehaviour
         switch (c.gameObject.tag)
         {
             case "EntryFilter":
-                Debug.Log("OK");
                 Physics.IgnoreCollision(transform.GetComponent<Collider>(), GetComponent<Collider>()); //allow for ennemies
                 break;
             case "EntryGate":
-                Debug.Log("Yeah ! First point");
                 entryReached = true;
                 break;
             case "Finish":
-                Debug.Log("Touched the house ! Mouhaha !!");
                 Destroy(this.gameObject);
                 break;
 
