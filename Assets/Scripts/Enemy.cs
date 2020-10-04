@@ -30,5 +30,7 @@ public class Enemy : MonoBehaviour
         isDead = true;
         animator.SetTrigger("Die");
         gameObject.tag = "DeadEnemy";
+        Destroy(gameObject, 1.5f);
+
     }
 }
