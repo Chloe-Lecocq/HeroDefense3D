@@ -118,6 +118,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collider: {fileID: 0}
   TowerMeshes: {fileID: 0}
+  range: 15
+  bulletPrefab: {fileID: 9103543462492677981, guid: 09988dc2420b3ce4b827bd7b888907de, type: 3}
+  fireRate: 1
+  enemyTag: Enemy
+  firePoint: {fileID: 6552644840746853131}
 --- !u!205 &5270158461952456108
 LODGroup:
   m_ObjectHideFlags: 0
