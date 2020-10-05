@@ -5,3 +5,5 @@ Pour se faire, le joueur à la possibilité de construire des tours de défense,
 Si un ennemi arrive jusqu'à la maison, celle-ci perds des points de vie et sa barre en haut de l'écran va diminuer. 
 
 Pour éviter l'encombrement du sol, les cadavres d'ennemis sont détruits 1,5secondes après leur mort. 
+
+La mise en place d'un système monétaire pour acheter les tours de défense est prévu comme amélioration future ainsi que l'impossibilité de placer une tour sur le chemin ou sur une autre tour. 
