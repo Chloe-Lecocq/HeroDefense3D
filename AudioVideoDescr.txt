@@ -7,3 +7,7 @@ Si un ennemi arrive jusqu'à la maison, celle-ci perds des points de vie et sa b
 Pour éviter l'encombrement du sol, les cadavres d'ennemis sont détruits 1,5secondes après leur mort. 
 
 La mise en place d'un système monétaire pour acheter les tours de défense est prévu comme amélioration future ainsi que l'impossibilité de placer une tour sur le chemin ou sur une autre tour. 
+
+
+Voici une seconde vidéo avec chaque fonctionnalité filmée :
+https://wetransfer.com/downloads/3e9ebbcc9430b57a64cd76fe7f17638920201004230303/8e457f20adf0023ff8bce3df7d9d1f7320201004230322/ec1d6d
