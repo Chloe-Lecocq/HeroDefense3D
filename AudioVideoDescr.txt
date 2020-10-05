@@ -1,0 +1,7 @@
+Hero Defense est un tower defense en vue première personne développé sous Unity3D.
+L'objectif est simple, les ennemis vont spawn à l'extérieur de nos enceintes, vont se diriger vers la porte et suivre le chemin au sol (aléatoirement, droite ou gauche) afin de se diriger vers la maison dans le but de la détruire. Si elle est détruite, c'est un Game Over. Le joueur doit donc impérativement tuer les ennemis sur leur route.
+
+Pour se faire, le joueur à la possibilité de construire des tours de défense, grâce à la touche E une fois en jeu, il peut choisir quelle tour construire. (Actuellement, une seule est disponible et quelque soit la case choisie, elle sera identique). La tour va alors, lancer des flèches sur les ennemis. Pour chaque ennemi détruit, le score s'incrémente de 1 point. 
+Si un ennemi arrive jusqu'à la maison, celle-ci perds des points de vie et sa barre en haut de l'écran va diminuer. 
+
+Pour éviter l'encombrement du sol, les cadavres d'ennemis sont détruits 1,5secondes après leur mort. 
